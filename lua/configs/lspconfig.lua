@@ -8,13 +8,14 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 nvlsp.defaults() -- loads nvchad's defaults
 
 lspconfig.servers = {
+	"clangd",
 	"lua_ls",
+	"nil_ls",
+	"rust_analyzer",
 }
 
 local default_servers = {
-	"clangd",
 	-- "rust_analyzer",
-	"nil_ls",
 }
 
 -- lsps with default config
