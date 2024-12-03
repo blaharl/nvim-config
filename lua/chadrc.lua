@@ -1,13 +1,13 @@
 local options = {
 
 	base46 = {
-		theme = "ashes", -- default theme
+		theme = "chadracula", -- default theme
 		hl_add = {},
 		hl_override = {},
 		integrations = {},
 		changed_themes = {},
 		transparency = false,
-		theme_toggle = { "ashes", "one_light" },
+		theme_toggle = { "chadracula", "one_light" },
 	},
 
 	ui = {

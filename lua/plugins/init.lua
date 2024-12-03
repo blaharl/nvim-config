@@ -105,6 +105,7 @@ return {
 			require("configs.debug")
 		end,
 	},
+
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^5", -- Recommended
@@ -114,5 +115,35 @@ return {
 				allFeatures = true,
 			},
 		},
+	},
+
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed.
+			"nvim-telescope/telescope.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+			"echasnovski/mini.pick", -- optional
+		},
+		cmd = "Neogit",
+		keys = {
+			{ "<leader>ln", "<cmd>Neogit<cr>", desc = "NeoGit" },
+		},
+		opts = {},
+		-- config = function()
+		-- 	require("neogit").setup({
+		-- 		kind = "split",
+		-- 		signs = {
+		-- 			-- {CLOSED, OPENED}
+		-- 			section = { "", "" },
+		-- 			item = { "", "" },
+		-- 			hunk = { "", "" },
+		-- 		},
+		-- 		integrations = { diffview = true },
+		-- 	})
+		-- end,
 	},
 }
