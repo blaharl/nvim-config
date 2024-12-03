@@ -130,7 +130,7 @@ return {
 		},
 		cmd = "Neogit",
 		keys = {
-			{ "<leader>ln", "<cmd>Neogit<cr>", desc = "NeoGit" },
+			{ "<leader>gn", "<cmd>Neogit<cr>", desc = "NeoGit" },
 		},
 		opts = {},
 		-- config = function()
