@@ -17,6 +17,19 @@ return {
 		end,
 	},
 
+	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {
+			override_by_extension = {
+				["norg"] = {
+					icon = "",
+					color = "#29B6F6",
+					name = "Log",
+				},
+			},
+		},
+	},
+
 	"nvzone/volt", -- optional, needed for theme switcher
 	{
 		"nvim-treesitter/nvim-treesitter",
