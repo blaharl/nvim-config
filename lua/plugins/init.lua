@@ -117,7 +117,7 @@ return {
 			-- Add your own debuggers here
 			"leoluz/nvim-dap-go",
 		},
-		event = { "BufReadPre", "BufNewFile" },
+		event = "VeryLazy",
 		config = function()
 			require("configs.debug")
 		end,
