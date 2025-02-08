@@ -13,13 +13,10 @@ lspconfig.servers = {
 	"clangd",
 	"lua_ls",
 	"nil_ls",
-	"rust_analyzer",
 	"ruff",
 }
 
-local default_servers = {
-	-- "rust_analyzer",
-}
+lspconfig.ensure_installed = lspconfig.servers
 
 for _, lsp in ipairs(lspconfig.servers) do
 	lspconfig[lsp].setup({
@@ -66,7 +63,6 @@ for _, lsp in ipairs(lspconfig.servers) do
 		},
 	})
 end
-
 
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,
