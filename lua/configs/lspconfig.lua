@@ -19,11 +19,49 @@ local default_servers = {
 }
 
 -- lsps with default config
-for _, lsp in ipairs(default_servers) do
+for _, lsp in ipairs(lspconfig.servers) do
 	lspconfig[lsp].setup({
-		on_attach = nvlsp.on_attach,
+		on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+			on_attach(client, bufnr)
+		end,
 		on_init = nvlsp.on_init,
 		capabilities = nvlsp.capabilities,
+		settings = {
+			diagnostics = {
+				underline = true,
+				update_in_insert = false,
+				virtual_text = false,
+				severity_sort = true,
+				float = {
+					focusable = false,
+					style = "minimal",
+					border = "rounded",
+					source = "if_many",
+					header = "",
+					prefix = "",
+				},
+			},
+			codelens = {
+				enabled = false,
+			},
+			document_highlight = {
+				enabled = true,
+			},
+			capabilities = {
+				workspace = {
+					fileOperations = {
+						didRename = true,
+						willRename = true,
+					},
+				},
+			},
+			-- format = {
+			-- 	formatting_options = nil,
+			-- 	timeout_ms = nil,
+			-- },
+		},
 	})
 end
 
@@ -41,9 +79,20 @@ lspconfig.lua_ls.setup({
 
 	settings = {
 		Lua = {
+			hint = {
+				enable = true,
+				setType = false,
+				paramType = true,
+				paramName = true,
+				semicolon = "Disable",
+				arrayIndex = "Disable",
+			},
 			diagnostics = {
 				enable = false, -- Disable all diagnostics from lua_ls
 				-- globals = { "vim" },
+			},
+			telemetry = {
+				enable = false,
 			},
 			workspace = {
 				library = {
@@ -60,12 +109,6 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-lspconfig.clangd.setup({
-	on_attach = function(client, bufnr)
-		client.server_capabilities.documentFormattingProvider = false
-		client.server_capabilities.documentRangeFormattingProvider = false
-		on_attach(client, bufnr)
-	end,
 	on_init = on_init,
 	capabilities = capabilities,
 
