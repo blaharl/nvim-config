@@ -18,7 +18,6 @@ local default_servers = {
 	-- "rust_analyzer",
 }
 
--- lsps with default config
 for _, lsp in ipairs(lspconfig.servers) do
 	lspconfig[lsp].setup({
 		on_attach = function(client, bufnr)
@@ -65,12 +64,6 @@ for _, lsp in ipairs(lspconfig.servers) do
 	})
 end
 
--- Without the loop, you would have to manually set up each LSP
---
--- lspconfig.html.setup {
---   on_attach = nvlsp.on_attach,
---   capabilities = nvlsp.capabilities,
--- }
 
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,

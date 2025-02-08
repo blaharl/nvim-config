@@ -24,8 +24,6 @@ return {
 				rs = { exec = "./$(FNOEXT)" },
 				py = { exec = "python3 $(FNOEXT).py" },
 			},
-			-- testcases_input_file_format = "$(FNOEXT)_input$(TCNUM).txt",
-			-- testcases_output_file_format = "$(FNOEXT)_output$(TCNUM).txt",
 			template_file = {
 				-- c = "~/path/to/file.c",
 				cc = "~/Projects/ps/templates/template.cc",
@@ -52,8 +50,5 @@ return {
 			{ "<leader>ce", "<cmd>CompetiTest edit_testcase<cr>", desc = "ct edit testcase" },
 			{ "<leader>cu", "<cmd>CompetiTest show_ui<cr>", desc = "ct show ui" },
 		},
-		-- config = function()
-		-- 	require("competitest").setup()
-		-- end,
 	},
 }
