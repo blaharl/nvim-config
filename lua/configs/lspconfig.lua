@@ -5,7 +5,8 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-nvlsp.defaults() -- loads nvchad's defaults
+-- loads nvchad's defaults
+nvlsp.defaults()
 
 lspconfig.servers = {
 	"clangd",

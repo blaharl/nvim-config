@@ -1,8 +1,10 @@
 return {
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^5", -- Recommended
-		lazy = false, -- This plugin is already lazy
+		-- Recommended
+		version = "^5",
+		-- This plugin is already lazy
+		lazy = false,
 		["rust-analyzer"] = {
 			cargo = {
 				allFeatures = true,
