@@ -1,5 +1,16 @@
 return {
 	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {
+			override_by_extension = {
+				["norg"] = {
+					icon = "",
+					color = "#29B6F6",
+					name = "neorg",
+				},
+			},
+		},
+	},
 		"nvim-neorg/neorg",
 		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
 		version = "*", -- Pin Neorg to the latest stable release
