@@ -9,10 +9,12 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 nvlsp.defaults()
 
 lspconfig.servers = {
+	"basedpyright",
 	"clangd",
 	"lua_ls",
 	"nil_ls",
 	"rust_analyzer",
+	"ruff",
 }
 
 local default_servers = {
@@ -103,8 +105,26 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+lspconfig.nil_ls.setup({
+	on_attach = on_attach,
 	on_init = on_init,
 	capabilities = capabilities,
 
-	settings = {},
+	settings = {
+		["nil"] = {
+			formatting = {
+				command = {
+					"nix",
+					"run",
+				},
+			},
+			nix = {
+				flake = {
+					-- calls `nix flake archive` to put a flake and its output to store
+					autoArchive = true,
+					-- autoEvalInputs = true,
+				},
+			},
+		},
+	},
 })
