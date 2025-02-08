@@ -11,6 +11,16 @@ return {
 			},
 		},
 	},
+	{
+		"3rd/image.nvim",
+		-- so that it doesn't build the rock
+		-- https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+		build = false,
+		opts = {
+			processor = "magick_cli",
+		},
+	},
+	{
 		"nvim-neorg/neorg",
 		-- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
 		lazy = false,
@@ -36,11 +46,49 @@ return {
 								neorg = "~/Persistent/Documents/Projects/neorg",
 								blog = "~/Persistent/Documents/vault/blog/content/posts",
 							},
-							index = "index.norg", -- The name of the main (root) .norg file
+							-- default_workspace = "neorg",
+							-- The name of the main (root) .norg file
+							index = "index.norg",
+						},
+					},
+					["core.completion"] = {
+						config = {
+							engine = "nvim-cmp",
+						},
+					},
+					["core.text-objects"] = {
+						keys = {
+							-- { "<leader>gn", "<cmd>Neogit<cr>", desc = "NeoGit" },
+						},
+					},
+					["core.latex.renderer"] = {
+						config = {
+							conceal = true,
+							render_on_enter = true,
+						},
+					},
+					["core.summary"] = {},
+					["core.export"] = {
+						config = {
+							-- export_dir = "<export-dir>/<language>-export",
+						},
+					},
+					["core.export.markdown"] = {
+						config = {
+							extension = "md",
+							extensions = "all",
+						},
+					},
+					["core.integrations.nvim-cmp"] = {
+						config = {
+							sources = {
+								{ name = "neorg" },
+							},
 						},
 					},
 				},
 			})
+			require("configs.neorg")
 			vim.wo.conceallevel = 2
 			vim.wo.concealcursor = "nc"
 			-- vim.g.maplocalleader = ","
