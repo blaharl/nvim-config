@@ -10,6 +10,7 @@ local options = {
 		"make",
 		"markdown",
 		"printf",
+		"rust",
 		"toml",
 		"vim",
 		"vimdoc",
