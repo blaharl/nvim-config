@@ -33,6 +33,15 @@ return {
 			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
 		end,
+		keys = {
+			{
+				"<leader>i",
+				function()
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+				end,
+				desc = "toggle inlay hint",
+			},
+		},
 	},
 
 	{
