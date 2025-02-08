@@ -43,7 +43,7 @@ return {
 		},
 		keys = {
 			{ "<leader>cr", "<cmd>CompetiTest run<cr>", desc = "ct run test" },
-			{ "<leader>cc", "<cmd>CompetiTest receive contest<cr>", desc = "ct receive contests" },
+			{ "<leader>cc", "<cmd>CompetiTest receive contest<cr>", desc = "ct receive contest" },
 			{ "<leader>cp", "<cmd>CompetiTest receive problem<cr>", desc = "ct receive problem" },
 			{ "<leader>ct", "<cmd>CompetiTest receive testcases<cr>", desc = "ct receive testcases" },
 			{ "<leader>cn", "<cmd>CompetiTest add_testcase<cr>", desc = "ct new testcase" },
