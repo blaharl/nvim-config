@@ -9,9 +9,14 @@ return {
 					exec = "g++",
 					args = { "-g", "$(FNAME)", "-o", "$(FNOEXT)" },
 				},
+				cpp = {
+					exec = "g++",
+					args = { "-g", "$(FNAME)", "-o", "$(FNOEXT)" },
+				},
 			},
 			run_command = {
 				cc = { exec = "./$(FNOEXT)" },
+				cpp = { exec = "./$(FNOEXT)" },
 			},
 			-- testcases_input_file_format = "$(FNOEXT)_input$(TCNUM).txt",
 			-- testcases_output_file_format = "$(FNOEXT)_output$(TCNUM).txt",
@@ -21,6 +26,7 @@ return {
 				cpp = "~/Projects/ps/templates/template.cc",
 				-- py = "~/path/to/file.py",
 				-- rust = "",
+				cpp = "~/Projects/ps/templates/template.cpp",
 			},
 
 			testcases_input_file_format = "$(FNOEXT)_in$(TCNUM)",
