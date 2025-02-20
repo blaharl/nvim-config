@@ -7,11 +7,7 @@ return {
 			compile_command = {
 				cc = {
 					exec = "g++",
-					args = { "-g", "$(FNAME)", "-o", "$(FNOEXT)" },
-				},
-				cpp = {
-					exec = "g++",
-					args = { "-g", "$(FNAME)", "-o", "$(FNOEXT)" },
+					args = { "$(FNAME)", "-o", "$(FNOEXT)", "-g" },
 				},
 				rs = {
 					exec = "rustc",
@@ -20,22 +16,20 @@ return {
 			},
 			run_command = {
 				cc = { exec = "./$(FNOEXT)" },
-				cpp = { exec = "./$(FNOEXT)" },
 				rs = { exec = "./$(FNOEXT)" },
 				py = { exec = "python3 $(FNOEXT).py" },
 			},
 			template_file = {
 				-- c = "~/path/to/file.c",
-				cc = "~/Projects/ps/templates/template.cc",
-				cpp = "~/Projects/ps/templates/template.cpp",
-				py = "~/Projects/ps/templates/template.py",
-				rs = "~/Projects/ps/templates/template.rs",
+				cc = "~/.config/nvim/lua/plugins/competitest/template.cc",
+				py = "~/.config/nvim/lua/plugins/competitest/template.py",
+				rs = "~/.config/nvim/lua/plugins/competitest/template.rs",
 			},
 
 			testcases_input_file_format = "$(FNOEXT)_in$(TCNUM)",
 			testcases_output_file_format = "$(FNOEXT)_out$(TCNUM)",
 
-			maximum_time = 20000,
+			maximum_time = 10000,
 
 			evaluate_template_modifiers = true,
 			received_files_extension = "cc",
