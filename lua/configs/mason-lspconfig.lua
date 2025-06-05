@@ -23,7 +23,7 @@ for _, s in ipairs(lspconfig.servers) do
 	end
 end
 
-require("mason-lspconfig").setup({
-	ensure_installed = all_servers,
-	automatic_installation = false,
-})
+-- require("mason-lspconfig").setup({
+-- 	ensure_installed = all_servers,
+-- 	automatic_installation = false,
+-- })

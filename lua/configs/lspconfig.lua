@@ -29,6 +29,8 @@ for _, lsp in ipairs(lspconfig.servers) do
 		capabilities = nvlsp.capabilities,
 		settings = {
 			diagnostics = {
+				virtual_text = true,
+				virtual_lines = true,
 				underline = true,
 				update_in_insert = false,
 				virtual_text = false,
