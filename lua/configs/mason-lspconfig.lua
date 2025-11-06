@@ -12,7 +12,9 @@ local function table_contains(table, value)
 end
 
 -- Build a list of lsp servers to install minus the ignored list.
-local all_servers = {}
+local all_servers = {
+	"rust_analyzer",
+}
 
 for _, s in ipairs(Servers) do
 	if not table_contains(ignore_install, s) then
@@ -20,7 +22,7 @@ for _, s in ipairs(Servers) do
 	end
 end
 
--- require("mason-lspconfig").setup({
--- 	ensure_installed = all_servers,
--- 	automatic_installation = false,
--- })
+require("mason-lspconfig").setup({
+	ensure_installed = all_servers,
+	automatic_installation = false,
+})

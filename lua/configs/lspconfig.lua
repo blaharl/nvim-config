@@ -9,7 +9,10 @@ Servers = {
 	"lua_ls",
 	"nil_ls",
 	"ruff",
-	"rust_analyzer",
 }
 
 vim.lsp.config.ensure_installed = Servers
+
+for _, s in ipairs(Servers) do
+	vim.lsp.enable(s)
+end
