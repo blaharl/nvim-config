@@ -7,7 +7,7 @@ return {
 			compile_command = {
 				cc = {
 					exec = "g++",
-					args = { "$(FNAME)", "-o", "$(FNOEXT)", "-g" },
+					args = { "$(FNAME)", "-o", "$(FNOEXT)", "-O2", "-g" },
 				},
 				rs = {
 					exec = "rustc",
