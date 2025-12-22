@@ -137,6 +137,13 @@ return {
 	},
 
 	{
+		"m4xshen/hardtime.nvim",
+		lazy = false,
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
+
+	{
 		"hedyhli/outline.nvim",
 		lazy = true,
 		cmd = { "Outline", "OutlineOpen" },
