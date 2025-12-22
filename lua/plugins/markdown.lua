@@ -1,5 +1,17 @@
 return {
 	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-mini/mini.nvim",
+			"nvim-mini/mini.icons",
+			"nvim-tree/nvim-web-devicons",
+		},
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
+	},
+	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
@@ -21,13 +33,5 @@ return {
 				vim.g.mkdp_filetypes = { "markdown" }
 			end
 		end,
-	},
-	{
-		"ellisonleao/glow.nvim",
-		config = true,
-		cmd = "Glow",
-		keys = {
-			{ "<leader>mg", "<cmd>Glow<cr>", desc = "glow!" },
-		},
 	},
 }

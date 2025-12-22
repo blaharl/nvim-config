@@ -17,7 +17,6 @@ return {
 			"make",
 			"markdown",
 			"markdown_inline",
-			"norg",
 			"printf",
 			"query",
 			"regex",

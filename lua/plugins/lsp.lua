@@ -285,6 +285,7 @@ return {
 
 				-- linter
 				"luacheck",
+				"markdownlint",
 
 				-- formatter
 				"black",
