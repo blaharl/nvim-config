@@ -5,18 +5,21 @@ return {
 		cmd = "CompetiTest",
 		opts = {
 			compile_command = {
-				cc = {
+				cpp = {
 					exec = "g++",
-					args = { "$(FNAME)", "-o", "$(FNOEXT)", "-O2", "-g" },
+					args = { "-std=c++23", "-O2", "-g", "$(FNAME)", "-o", "$(FNOEXT)" },
 				},
-				rs = {
-					exec = "rustc",
-					args = { "$(FNAME)", "-o", "$(FNOEXT)" },
+				rust = {
+					exec = "cargo",
+					args = { "build", "--release", "--bin", "$(FNOEXT)" },
 				},
 			},
 			run_command = {
-				cc = { exec = "./$(FNOEXT)" },
-				rs = { exec = "./$(FNOEXT)" },
+				cpp = { exec = "./$(FNOEXT)" },
+				rust = {
+					exec = "cargo",
+					args = { "run", "--release", "--bin", "$(FNOEXT)" },
+				},
 				py = { exec = "python3 $(FNOEXT).py" },
 			},
 			template_file = {
@@ -32,8 +35,7 @@ return {
 			maximum_time = 10000,
 
 			evaluate_template_modifiers = true,
-			received_files_extension = "cc",
-			-- received_files_extension = "rs",
+			received_files_extension = "rs",
 		},
 		keys = {
 			{ "<leader>cr", "<cmd>CompetiTest run<cr>", desc = "ct run test" },

@@ -7,7 +7,7 @@
 // Start: $(DATE)
 
 #[allow(unused_imports)]
-use std::io::{BufWriter, Write, stdin, stdout};
+use std::io::{stdin, stdout, BufWriter, Write};
 
 #[derive(Default)]
 struct Scanner {
@@ -26,18 +26,20 @@ impl Scanner {
     }
 }
 
+#[allow(unused_variables, unused_mut)]
 fn main() {
     let mut scan = Scanner::default();
+    // write(ln)!(out, "string format").ok()
     let out = &mut BufWriter::new(stdout());
 
     let n = scan.next();
-    let mut p: Vec<_> = (0..n).map(|_| (scan.next(), scan.next())).collect();
-    p.push((0_i64, 0_i64));
-    let s = format!("R{}R", scan.next::<String>());
-
-    for pi in p {
-        write!(out, "{} ", pi.0).ok();
+    for _ in 0..n {
+        solve(&mut scan, &mut *out);
     }
+}
 
-    writeln!(out, "").ok();
+#[allow(unused_variables, unused_mut)]
+fn solve(scan: &mut Scanner, mut out: impl Write) {
+    // let p: Vec<_> = (0..n).map(|_| (scan.next(), scan.next())).collect();
+    // let s = format!("R{}R", scan.next::<String>());
 }
