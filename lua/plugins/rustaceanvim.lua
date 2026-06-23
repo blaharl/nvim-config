@@ -1,3 +1,24 @@
+local snippets = {
+	["get_n_vector"] = {
+		prefix = "_get_n_vector",
+		body = [[
+let n: usize = scan.next();
+let a: Vec<u64> = (0..n).map(|_| scan.next()).collect();
+]],
+	},
+	["get_n_loop"] = {
+		prefix = "_get_n_loop",
+		body = [[
+let n: usize = scan.next();
+let mut a = vec![];
+for i in 0..n {
+  let ai : u64 = scan.next();
+  a.push(ai);
+}
+]],
+	},
+}
+
 return {
 	{
 		"mrcjkb/rustaceanvim",
@@ -21,6 +42,14 @@ return {
 						["rust-analyzer"] = {
 							cargo = {
 								allFeatures = true,
+							},
+							check = {
+								command = "clippy",
+							},
+							completion = {
+								snippets = {
+									custom = snippets,
+								},
 							},
 						},
 					},
