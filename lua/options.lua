@@ -6,21 +6,19 @@ vim.g.have_nerd_font = true
 vim.o.number = true
 vim.o.relativenumber = true
 
-vim.o.mouse = "a"
-vim.o.winborder = "rounded"
+vim.o.mouse = 'a'
+vim.o.winborder = 'rounded'
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
 --  See `:help 'clipboard'`
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable break indent
 vim.o.breakindent = true
 
--- Save undo history
+-- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -28,7 +26,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = 'yes'
 
 -- interval for writing swap file to disk, also used by gitsigns
 -- Decrease update time
@@ -48,12 +46,12 @@ vim.o.splitbelow = true
 --  Notice listchars is set using `vim.opt` instead of `vim.o`.
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
---   and `:help lua-options-guide`
+--   and `:help lua-guide-options`
 vim.o.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
-vim.o.inccommand = "split"
+vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
@@ -72,13 +70,12 @@ vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 
-vim.cmd([[
+vim.cmd [[
 autocmd Filetype * set formatoptions-=cro
 autocmd Filetype * setlocal formatoptions-=cro
-]])
+]]
 
-vim.opt.langmap =
-	"ㅁa,ㅠb,ㅊc,ㅇd,ㄷe,ㄹf,ㅎg,ㅗh,ㅑi,ㅓj,ㅏk,ㅣl,ㅡm,ㅜn,ㅐo,ㅔp,ㅂq,ㄱr,ㄴs,ㅅt,ㅕu,ㅍv,ㅈw,ㅌx,ㅛy,ㅋz"
+vim.opt.langmap = 'ㅁa,ㅠb,ㅊc,ㅇd,ㄷe,ㄹf,ㅎg,ㅗh,ㅑi,ㅓj,ㅏk,ㅣl,ㅡm,ㅜn,ㅐo,ㅔp,ㅂq,ㄱr,ㄴs,ㅅt,ㅕu,ㅍv,ㅈw,ㅌx,ㅛy,ㅋz'
 
 --[[
 NvChad options
