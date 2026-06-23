@@ -6,7 +6,6 @@
 // Time Limit: $(TIMELIM)
 // Start: $(DATE)
 
-#[allow(unused_imports)]
 use std::io::{stdin, stdout, BufWriter, Write};
 
 #[derive(Default)]
@@ -26,19 +25,20 @@ impl Scanner {
     }
 }
 
-#[allow(unused_variables, unused_mut)]
 fn main() {
     let mut scan = Scanner::default();
     // write(ln)!(out, "string format").ok()
     let out = &mut BufWriter::new(stdout());
 
-    let n = scan.next();
+    let mut n = 0;
+    if n != 1 {
+        n = scan.next();
+    }
     for _ in 0..n {
         solve(&mut scan, &mut *out);
     }
 }
 
-#[allow(unused_variables, unused_mut)]
 fn solve(scan: &mut Scanner, mut out: impl Write) {
     // let p: Vec<_> = (0..n).map(|_| (scan.next(), scan.next())).collect();
     // let s = format!("R{}R", scan.next::<String>());
