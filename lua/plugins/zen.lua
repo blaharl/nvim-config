@@ -1,18 +1,11 @@
-return {
-	{
-		"folke/zen-mode.nvim",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	},
-	{
-		"folke/twilight.nvim",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	},
+---@param repo string
+---@return string
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'folke/zen-mode.nvim',
+  gh 'folke/twilight.nvim',
 }
+
+require('zen-mode').setup {}
+require('twilight').setup {}

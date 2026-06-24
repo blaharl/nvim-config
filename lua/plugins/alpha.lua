@@ -1,28 +1,29 @@
-return {
-	"goolord/alpha-nvim",
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
-	config = function()
-		local alpha = require("alpha")
-		local dashboard = require("alpha.themes.startify")
-		dashboard.section.header.val = {
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                     ]],
-			[[       ████ ██████           █████      ██                     ]],
-			[[      ███████████             █████                             ]],
-			[[      █████████ ███████████████████ ███   ███████████   ]],
-			[[     █████████  ███    █████████████ █████ ██████████████   ]],
-			[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-			[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-			[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-		}
-		alpha.setup(dashboard.opts)
-	end,
+---@param repo string
+---@return string
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'goolord/alpha-nvim',
+  gh 'nvim-tree/nvim-web-devicons', -- alpha-nvim
 }
+
+local alpha = require 'alpha'
+local dashboard = require 'alpha.themes.startify'
+dashboard.section.header.val = {
+  [[                                                                       ]],
+  [[                                                                       ]],
+  [[                                                                       ]],
+  [[                                                                       ]],
+  [[                                                                     ]],
+  [[       ████ ██████           █████      ██                     ]],
+  [[      ███████████             █████                             ]],
+  [[      █████████ ███████████████████ ███   ███████████   ]],
+  [[     █████████  ███    █████████████ █████ ██████████████   ]],
+  [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+  [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+  [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+  [[                                                                       ]],
+  [[                                                                       ]],
+  [[                                                                       ]],
+}
+alpha.setup(dashboard.opts)
