@@ -35,8 +35,8 @@ vim.g.rustaceanvim = {
       vim.keymap.set('n', '<leader>ca', function()
         vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
         -- or vim.lsp.buf.codeAction() if you don't want grouping.
+        vim.keymap.set('n', 'K', function() vim.cmd.RustLsp('hover', 'actions') end, { desc = 'LSP Hover Actions' })
       end, { desc = 'LSP Code Action' })
-      vim.keymap.set('n', 'K', function() vim.cmd.RustLsp('hover', 'actions') end, { desc = 'LSP Hover Actions' })
     end,
     settings = {
       ['rust-analyzer'] = {
