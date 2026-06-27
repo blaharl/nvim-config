@@ -28,7 +28,7 @@ vim.pack.add {
   gh 'rcarriga/nvim-notify', -- noice
   gh 'akinsho/toggleterm.nvim',
   gh 'windwp/nvim-autopairs',
-  gh 'mbbill/undotree',
+  gh 'XXiaoA/atone.nvim',
   gh 'drop-stones/im-switch.nvim',
   gh 'nvim-lua/plenary.nvim', -- im-switch, todo-comments
   gh 'folke/todo-comments.nvim',
@@ -115,7 +115,9 @@ require('outline').setup {
   vim.keymap.set('n', '<leader>o', '<cmd>Outline<cr>', { desc = 'Outline' }),
 }
 
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>', { desc = 'toggle Undo Tree' })
+require('atone').setup {
+  vim.keymap.set('n', '<leader>u', '<cmd>Atone toggle<cr>', { desc = 'toggle Atone' }),
+}
 
 vim.keymap.set('n', '<c-h>', '<cmd>:TmuxNavigateLeft<cr>', { desc = 'Move Left' })
 vim.keymap.set('n', '<c-j>', '<cmd>:TmuxNavigateDown<cr>', { desc = 'Move Down' })
