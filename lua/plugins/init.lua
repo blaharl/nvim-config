@@ -68,6 +68,9 @@ require('noice').setup {
     inc_rename = true, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = true, -- add a border to hover docs and signature help
   },
+  vim.keymap.set('n', '<leader>nd', function() require('noice').cmd 'dismiss' end, { desc = 'Dismiss Notifications' }),
+  vim.keymap.set('n', '<leader>nh', function() require('noice').cmd 'history' end, { desc = 'Notification History' }),
+  vim.keymap.set('n', '<leader>nl', function() require('noice').cmd 'last' end, { desc = 'Show Last Notification' }),
 }
 
 require('toggleterm').setup {
