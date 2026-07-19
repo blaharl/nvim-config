@@ -38,12 +38,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<C-x>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -84,23 +78,12 @@ vim.keymap.set({ 'n', 't' }, '<A-h>', function() require('toggleterm').toggle(1,
 
 vim.keymap.set({ 'n', 't' }, '<A-i>', function() require('toggleterm').toggle(1, 20, '', 'float') end, { desc = 'terminal toggle floating term' })
 
--- vim.keymap.del("n", "<c-h>")
--- vim.keymap.del("n", "<c-j>")
--- vim.keymap.del("n", "<c-k>")
--- vim.keymap.del("n", "<c-l>")
-
 --[[ 
-
-NvChad Keybinds
 
 local map = vim.keymap.set
 
 vim.keymap.set("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 vim.keymap.set("i", "<C-e>", "<End>", { desc = "move end of line" })
-
-vim.keymap.set({ "n", "x" }, "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
 
 -- tabufline
 if require("nvconfig").ui.tabufline.enabled then
