@@ -82,22 +82,34 @@ require('toggleterm').setup {
 -- event = 'InsertEnter'
 require('nvim-autopairs').setup {}
 
--- event = 'VeryLazy',
-require('im-switch').setup {
-  -- windows = {
-  --   enabled = true, -- Set to true if you are on Windows/WSL2
-  -- },
-  -- macos = {
-  --   enabled = true, -- Set to true if you are on macOS
-  --   default_im = "com.apple.keylayout.ABC", -- or your preferred input method
-  -- },
-  linux = {
-    enabled = true, -- Set to true if you are on Linux
-    default_im = 'keyboard-us', -- or your preferred input method
-    get_im_command = { 'fcitx5-remote', '-n' }, -- { "ibus", "engine" }
-    set_im_command = { 'fcitx5-remote', '-s' }, -- { "ibus", "engine" }
-  },
-}
+-- event = 'VeryLazy'
+-- uname -a, o, s
+if io.popen('grep -i microsoft /proc/version', 'r'):read '*l' ~= nil then
+  -- require('im-switch').setup {
+  --   windows = {
+  --     enabled = true, -- Set to true if you are on Windows/WSL2
+  --   },
+  -- }
+elseif jit.os == 'Linux' then
+  require('im-switch').setup {
+    -- macos = {
+    --   enabled = true, -- Set to true if you are on macOS
+    --   default_im = "com.apple.keylayout.ABC", -- or your preferred input method
+    -- },
+    linux = {
+      enabled = true, -- Set to true if you are on Linux
+      default_im = 'keyboard-us', -- or your preferred input method
+      get_im_command = { 'fcitx5-remote', '-n' }, -- { "ibus", "engine" }
+      set_im_command = { 'fcitx5-remote', '-s' }, -- { "ibus", "engine" }
+    },
+  }
+elseif os.getenv 'OS' == '^cygwin' or os.getenv 'OS' == '^msys' or os.getenv 'OS' == '^mingw' then
+  require('im-switch').setup {
+    windows = {
+      enabled = true, -- Set to true if you are on Windows/WSL2
+    },
+  }
+end
 
 -- event = 'VimEnter',
 -- Highlight todo, notes, etc in comments
