@@ -202,6 +202,7 @@ vim.list_extend(ensure_installed, {
   'black',
   'clang-format',
   'isort',
+  'nixfmt',
   'prettier',
 
   -- dap
