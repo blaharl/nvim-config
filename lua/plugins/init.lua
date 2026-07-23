@@ -120,9 +120,9 @@ require('todo-comments').setup {
 require('hardtime').setup {
   lazy = false,
   disabled_filetypes = {
-    lazy = false, -- Enable Hardtime in lazy filetype
-    ['dapui*'] = false, -- Enable Hardtime in filetype starting with dapui
+    ['Outline'] = true,
   },
+  vim.keymap.set('n', '<leader>ht', '<cmd>Hardtime toggle<cr>', { desc = 'Toggle HardTime' }),
 }
 
 require('outline').setup {
