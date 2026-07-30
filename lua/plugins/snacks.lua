@@ -11,7 +11,7 @@ vim.pack.add {
 ---@type snacks.Config
 require('snacks').setup {
   toggle = { enable = true },
-  vim.keymap.set('n', '<c-n>', function() Snacks.explorer() end, { desc = 'open explorer' }),
+  vim.keymap.set('n', '<c-e>', function() Snacks.explorer() end, { desc = 'open explorer' }),
   vim.keymap.set('n', '<leader>zl', function() Snacks.lazygit() end, { desc = 'open lazygit' }),
   vim.keymap.set('n', '<leader>zs', function() Snacks.scratch() end, { desc = 'Toggle Scratch Buffer' }),
   vim.keymap.set('n', '<leader>zS', function() Snacks.scratch.select() end, { desc = 'Select Scratch Buffer' }),

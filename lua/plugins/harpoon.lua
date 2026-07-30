@@ -15,7 +15,7 @@ harpoon:setup()
 -- REQUIRED
 
 vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end, { desc = 'add buffer to harpoon' })
-vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = 'harpoon quick menu' })
+vim.keymap.set('n', '<C-a>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = 'harpoon quick menu' })
 
 vim.keymap.set('n', '<A-q>', function() harpoon:list():select(1) end)
 vim.keymap.set('n', '<A-w>', function() harpoon:list():select(2) end)
