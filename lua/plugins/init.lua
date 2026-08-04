@@ -36,6 +36,7 @@ vim.pack.add {
   gh 'hedyhli/outline.nvim',
   gh 'christoomey/vim-tmux-navigator',
   gh 'nickjvandyke/opencode.nvim',
+  gh 'xdagiz/jjui.nvim',
 }
 
 --  For example, here is the simplest possible setup for `guess-indent.nvim`,
@@ -135,7 +136,6 @@ require('atone').setup {
   vim.keymap.set('n', '<leader>u', '<cmd>Atone toggle<cr>', { desc = 'toggle Atone' }),
 }
 
-
 ---@type opencode.Opts
 vim.g.opencode_opts = {
   -- Your configuration, if any; goto definition on the type for details
@@ -149,6 +149,7 @@ vim.keymap.set({ 'n' }, 'goo', function() return require('opencode').operator '@
 vim.keymap.set({ 'n' }, '<a-c-u>', function() require('opencode').command 'session.half.page.up' end, { desc = 'Scroll OpenCode up' })
 vim.keymap.set({ 'n' }, '<a-c-d>', function() require('opencode').command 'session.half.page.down' end, { desc = 'Scroll OpenCode down' })
 
+vim.keymap.set('n', '<leader>zj', require("jjui").toggle, { desc = 'Toggle jjui' })
 
 vim.keymap.set('n', '<c-h>', '<cmd>:TmuxNavigateLeft<cr>', { desc = 'Move Left' })
 vim.keymap.set('n', '<c-j>', '<cmd>:TmuxNavigateDown<cr>', { desc = 'Move Down' })
