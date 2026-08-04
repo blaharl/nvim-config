@@ -35,6 +35,7 @@ vim.pack.add {
   gh 'm4xshen/hardtime.nvim',
   gh 'hedyhli/outline.nvim',
   gh 'christoomey/vim-tmux-navigator',
+  gh 'nickjvandyke/opencode.nvim',
 }
 
 --  For example, here is the simplest possible setup for `guess-indent.nvim`,
@@ -133,6 +134,21 @@ require('outline').setup {
 require('atone').setup {
   vim.keymap.set('n', '<leader>u', '<cmd>Atone toggle<cr>', { desc = 'toggle Atone' }),
 }
+
+
+---@type opencode.Opts
+vim.g.opencode_opts = {
+  -- Your configuration, if any; goto definition on the type for details
+}
+
+-- Recommended/example keymaps
+vim.keymap.set({ 'n', 'x' }, '<a-c-a>', function() require('opencode').ask '@this: ' end, { desc = 'Ask OpenCode…' })
+vim.keymap.set({ 'n', 'x' }, '<a-c-x>', function() require('opencode').select() end, { desc = 'Select OpenCode…' })
+vim.keymap.set({ 'n', 'x' }, 'go', function() return require('opencode').operator '@this ' end, { desc = 'Append range to OpenCode', expr = true })
+vim.keymap.set({ 'n' }, 'goo', function() return require('opencode').operator '@this ' .. '_' end, { desc = 'Append line to OpenCode', expr = true })
+vim.keymap.set({ 'n' }, '<a-c-u>', function() require('opencode').command 'session.half.page.up' end, { desc = 'Scroll OpenCode up' })
+vim.keymap.set({ 'n' }, '<a-c-d>', function() require('opencode').command 'session.half.page.down' end, { desc = 'Scroll OpenCode down' })
+
 
 vim.keymap.set('n', '<c-h>', '<cmd>:TmuxNavigateLeft<cr>', { desc = 'Move Left' })
 vim.keymap.set('n', '<c-j>', '<cmd>:TmuxNavigateDown<cr>', { desc = 'Move Down' })
