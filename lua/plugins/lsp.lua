@@ -121,7 +121,7 @@ local servers = {
       desc = 'LSP: Disable hover capability from Ruff',
     }),
   },
-  -- gopls = {},
+  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   --
@@ -188,11 +188,9 @@ require('mason').setup {}
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   -- lsp
-  -- 'lua_ls',
   'pylyzer',
   'pyrefly',
   'rust_analyzer',
-  -- 'stylua',
 
   -- linter
   'luacheck',
@@ -201,6 +199,7 @@ vim.list_extend(ensure_installed, {
   -- formatter
   'black',
   'clang-format',
+  'gofumpt',
   'isort',
   'nixfmt',
   'prettier',
