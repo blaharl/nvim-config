@@ -32,7 +32,6 @@ vim.pack.add {
   gh 'drop-stones/im-switch.nvim',
   gh 'nvim-lua/plenary.nvim', -- im-switch, todo-comments
   gh 'folke/todo-comments.nvim',
-  gh 'm4xshen/hardtime.nvim',
   gh 'hedyhli/outline.nvim',
   gh 'christoomey/vim-tmux-navigator',
   gh 'nickjvandyke/opencode.nvim',
@@ -118,14 +117,6 @@ end
 -- Highlight todo, notes, etc in comments
 require('todo-comments').setup {
   signs = false,
-}
-
-require('hardtime').setup {
-  lazy = false,
-  disabled_filetypes = {
-    ['Outline'] = true,
-  },
-  vim.keymap.set('n', '<leader>ht', '<cmd>Hardtime toggle<cr>', { desc = 'Toggle HardTime' }),
 }
 
 require('outline').setup {
