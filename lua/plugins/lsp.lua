@@ -123,9 +123,7 @@ local servers = {
     }),
   },
   gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  --
+  tinymist = {},
   -- Some languages (like typescript) have entire language plugins that can be useful:
   --    https://github.com/pmizio/typescript-tools.nvim
   --
@@ -204,6 +202,7 @@ vim.list_extend(ensure_installed, {
   'isort',
   'nixfmt',
   'prettier',
+  'typstyle',
 
   -- dap
   'cpptools',

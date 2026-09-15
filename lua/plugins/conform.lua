@@ -25,27 +25,30 @@ require('conform').setup {
   },
   -- You can also specify external formatters in here.
   formatters_by_ft = {
-    lua = { 'stylua' },
-    javascript = { 'prettier' },
-    typescript = { 'prettier' },
-    javascriptreact = { 'prettier' },
-    typescriptreact = { 'prettier' },
-    svelte = { 'prettier' },
-    css = { 'prettier' },
-    html = { 'prettier' },
-    json = { 'prettier' },
-    yaml = { 'prettier' },
-    markdown = { 'prettier' },
-    graphql = { 'prettier' },
-    -- Conform can also run multiple formatters sequentially
-    python = {
-      --"isort",
-      'black',
-    },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
-    nix = { 'nixfmt' },
+    css = { 'prettier' },
     go = { 'gofumpt' },
+    graphql = { 'prettier' },
+    html = { 'prettier' },
+    javascript = { 'prettier' },
+    javascriptreact = { 'prettier' },
+    json = { 'prettier' },
+    lua = { 'stylua' },
+    markdown = { 'prettier' },
+    nix = { 'nixfmt' },
+    python = { 'black' },
+    svelte = { 'prettier' },
+    typ = { 'typstyle' },
+    typescript = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    yaml = { 'prettier' },
+
+    -- Conform can also run multiple formatters sequentially
+    -- python = {
+    --   --"isort",
+    --   'black',
+    -- },
     -- You can use 'stop_after_first' to run the first available formatter from the list
     -- javascript = { "prettierd", "prettier", stop_after_first = true },
   },
